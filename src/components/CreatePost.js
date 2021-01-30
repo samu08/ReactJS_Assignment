@@ -6,7 +6,7 @@ const CreatePost=(props)=>{
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
         axios.post('  http://localhost:4000/employees', data).then(result => {
-            props.history.push("/");
+            props.history.push("/posts");
         })
     };
     return(

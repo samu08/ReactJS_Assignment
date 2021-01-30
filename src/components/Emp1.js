@@ -21,7 +21,7 @@ const Emp1=()  =>{
    
   const deleteUser = id =>{ setData(Data.filter(user => user.id !== id));
     console.log(Data)
-    history.push('/')
+    history.push('/posts')
   }
   return(
     

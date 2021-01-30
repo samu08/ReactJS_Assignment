@@ -21,7 +21,7 @@ const EditPost = (props) => {
 
     const onSubmit = data => {
         axios.put(`http://localhost:4000/employees/${id}`, data).then(result => {
-            props.history.push("/");
+            props.history.push("/posts");
         })
     };
 
