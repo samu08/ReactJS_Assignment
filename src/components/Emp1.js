@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';  
 import { Link ,useHistory} from 'react-router-dom';
 
-//const empdata=[];
+
 
 
 
@@ -13,20 +13,30 @@ const Emp1=()  =>{
   
  
   const [Data, setData] = useState([]);
+  
+
+
     useEffect(() => {
       axios.get('http://localhost:4000/employees').then(result => {
           setData(result.data);
       })
   }, []);
    
+
+  
+  
+
   const deleteUser = id =>{ setData(Data.filter(user => user.id !== id));
     console.log(Data)
     history.push('/posts')
   }
+
+   
+  
   return(
     
       <div>
-          <h1>Hello there</h1>
+          <h1>Hello there!</h1>
      
           <table class="table table-striped">
     <thead>
@@ -48,8 +58,10 @@ const Emp1=()  =>{
            <td>{item.status}</td>
            <td>{item.gender}</td>
            
-           <Link to={`/edit/${item.id}`} className="btn btn-primary">edit</Link>
+           <Link to={`/edit/${item.id}`} className="btn btn-primary" >edit</Link>
            <button  type="button" class="btn btn-danger" onClick={()=> deleteUser(item.id)}>delete</button>
+          
+         
            </tr>
        }
     

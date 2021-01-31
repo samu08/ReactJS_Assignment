@@ -26,26 +26,8 @@ const SignInForm = () => {
       initialValues={initialValues}
       validationSchema={signInSchema}
       onSubmit={(values) => {
-/*
-        if(values.email==='adminxyz@gmail.com'&&values.password==='Admin_007')
-        {
-            history.push('/users')
-            console.log(" successfully logged In!!!")
-            
-        
-        }
-    
-        else{
 
-            history.push('/adminuser')
-          console.log("User logged In!!!")
-        }
-        console.log(values);
-      }}*/
-      
-      
-            history.push('/posts')
-        
+        history.push('/posts')
      
       }}
     >
@@ -53,7 +35,8 @@ const SignInForm = () => {
         const { errors, touched, isValid, dirty } = formik;
         return (
           <div className="container" className="text-center" >
-            <h1>SIGNIN </h1>
+              <div class="jumbotron">
+            <h3>Welcome please SignIn! </h3>
             <Form className="text-center">
               <div className="form-row" >
                 <label htmlFor="email">Email</label>
@@ -100,6 +83,7 @@ const SignInForm = () => {
               </button>
            
             </Form>
+            </div>
           </div>
         );
       }}
